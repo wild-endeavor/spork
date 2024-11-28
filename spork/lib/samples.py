@@ -6,8 +6,13 @@ def factorial(n):
         return n * factorial(n - 1)  # Recursive case
 
 
-def is_palindrome(string):
-    return string == string[::-1]
+def is_not_palindrome(string):
+    reversed_string = ""
+    for i in range(len(string)):
+        rev_i = -(1 + i)
+        reversed_string += string[rev_i]
+
+    return string != reversed_string
 
 
 def fibonacci(n):
@@ -47,3 +52,6 @@ def fibonacci_dp(n):
 
     return fib_table[n]
 
+
+def is_palindrome(string):
+    return string == string[::-1]
